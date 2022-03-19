@@ -1,0 +1,56 @@
+<template name="adTabbar">
+	<view class="tabbar" :style="{backgroundColor: backgroundColor}">
+		<slot></slot>
+	</view>
+</template>
+
+<script>
+	export default {
+		name: 'adTabbar',
+		components: {},
+		props: {
+			// 背景色
+			backgroundColor: {
+				type: String,
+				default: "#FFFFFF"
+			}
+		},
+		data() {
+			return {
+				
+			}
+		},
+		methods: {}
+	}
+</script>
+
+<style>
+	.tabbar {
+		/*foot*/
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40upx;
+		bottom: 0;
+		/* z-index: 1024; */
+		display: flex;
+		
+		/*cu-bar*/
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		
+		/*tabbar*/
+		padding: 0;
+		height: calc(130upx + env(safe-area-inset-bottom) / 2);
+		padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+		
+		/*shadow*/
+		box-shadow: 0 -1upx 6upx rgba(0, 0, 0, 0.1);
+		
+		color: #666666;
+		
+		/*other*/
+	}
+</style>
